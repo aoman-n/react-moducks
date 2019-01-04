@@ -7,14 +7,19 @@ export default lifecycle({
   }
 })(Index);
 
-function Index({ changeInputField, startPostUser, users, inputUserName }) {
+function Index({ changeInputField, startPostUser, users, inputUserName, startDeleteUser }) {
   return (
     <React.Fragment>
       <div>
         <h1>Users</h1>
         { users.map(user => {
           return (
-            <p key={user.id}>{user.name}</p>
+            <div key={user.id}>
+              <p>{user.name}</p>
+              <button onClick={() => {
+                startDeleteUser(user.id);
+              }}>delete</button>
+            </div>
           )
         }) }
       </div>

@@ -9,3 +9,7 @@ export const fetchUsers = () => {
 export const postUser = user => {
   return axios.post(URL, {name: user});
 }
+
+export const deleteUser = id => {
+  return axios.delete(`${URL}/${id}`);
+}

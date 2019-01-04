@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose, pure } from 'recompose';
-import { requestUser, changeInputField, startPostUser } from '../moducks/user';
+import { requestUser, changeInputField, startPostUser, startDeleteUser } from '../moducks/user';
 import { visibleUsersSelector } from '../selectors';
 
 import Index from '../components/Index';
@@ -17,20 +17,22 @@ const enhancer = compose(
     {
       requestUser,
       changeInputField,
-      startPostUser
+      startPostUser,
+      startDeleteUser
     }
   ),
   pure
 )
 
 export default enhancer(props => {
-  const { users, inputUserName, requestUser, changeInputField, startPostUser } = props;
+  const { users, inputUserName, requestUser, changeInputField, startPostUser, startDeleteUser } = props;
   const propsValues = {
     users,
     inputUserName,
     requestUser,
     changeInputField,
-    startPostUser
+    startPostUser,
+    startDeleteUser
   }
 
   return (

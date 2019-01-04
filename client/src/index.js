@@ -7,8 +7,8 @@ import {
 } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import reducers from './moducks/reducers';
-import sagas from './moducks/sagas'
+import reducers from './reducers';
+import sagas from './sagas'
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import App from './App';

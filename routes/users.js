@@ -25,4 +25,10 @@ router.post('/', (req, res, next) => {
   res.json(users);
 })
 
+router.delete('/:id', (req, res, next) => {
+  const { id } = req.params;
+  users = users.filter(u => u.id !== Number(id));
+  res.json(users);
+});
+
 module.exports = router;
